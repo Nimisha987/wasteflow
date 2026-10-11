@@ -2,6 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 
 BASE = Path(__file__).resolve().parent / "output"
 
@@ -9,6 +10,15 @@ fill_path = BASE / "fill_estimates.csv"
 collection_path = BASE / "collection_recommendations.csv"
 
 app = FastAPI(
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://wasteflow-bice.vercel.app"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
     title="WasteFlow AI API",
     description="Prototype API using historical simulated estimates",
     version="0.1.0",
