@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+
+# Model artifacts and large generated files
+*.joblib
+*.pkl
+
+# Backups
+*.before-*
+*.bak
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# System files
+.DS_Store
+
+# Backup folders and Python cache
+*-backup/
+__pycache__/
+
+# Frontend backup files
+frontend/wasteflow-ui/*-backup/
+frontend/wasteflow-ui/js/*backup*
+frontend/wasteflow-ui/js/*.pre-*
