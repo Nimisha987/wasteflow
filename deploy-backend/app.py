@@ -10,7 +10,10 @@ fill_path = BASE / "fill_estimates.csv"
 collection_path = BASE / "collection_recommendations.csv"
 
 app = FastAPI(
-
+    title="WasteFlow AI API",
+    description="Prototype API using historical simulated estimates",
+    version="0.1.0",
+)
 
 app.add_middleware(
     CORSMiddleware,
@@ -18,10 +21,6 @@ app.add_middleware(
     allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
-)
-    title="WasteFlow AI API",
-    description="Prototype API using historical simulated estimates",
-    version="0.1.0",
 )
 
 def load_data():
