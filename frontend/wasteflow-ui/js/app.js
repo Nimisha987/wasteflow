@@ -659,7 +659,7 @@ render();
 
 /* WASTEFLOW_API_BINS_ADAPTER */
 // /* API URL ko deployment ke browser-accessible proxy URL par set karna hoga. */
-// const WASTEFLOW_BINS_API = '/jupyterlab/default/proxy/8000/bins';
+// const WASTEFLOW_BINS_API = '/jupyterlab/default/https://wasteflow-4o45.onrender.com/bins';
 // let wasteflowApiBins = null;
 // let wasteflowApiError = '';
 
@@ -758,7 +758,7 @@ render();
 
 // })();
 /* WASTEFLOW_API_BINS_ADAPTER */
-const WASTEFLOW_BINS_API = '/jupyterlab/default/proxy/8000/bins';
+const WASTEFLOW_BINS_API = '/jupyterlab/default/https://wasteflow-4o45.onrender.com/bins';
 let wasteflowApiBins = null;
 let wasteflowApiError = '';
 
@@ -882,7 +882,7 @@ fetch(WASTEFLOW_BINS_API)
 
 })();
 /* WASTEFLOW_API_RECOMMENDATIONS_ADAPTER */
-const WASTEFLOW_RECOMMENDATIONS_API = '/jupyterlab/default/proxy/8000/recommendations';
+const WASTEFLOW_RECOMMENDATIONS_API = '/jupyterlab/default/https://wasteflow-4o45.onrender.com/recommendations';
 let wasteflowApiRecommendations = [];
 
 function renderWasteflowApiRecommendations() {
@@ -953,7 +953,7 @@ fetch(WASTEFLOW_RECOMMENDATIONS_API)
   if (!svg || !body) return;
 
   try {
-    const response = await fetch('/jupyterlab/default/proxy/8000/forecast-data');
+    const response = await fetch('/jupyterlab/default/https://wasteflow-4o45.onrender.com/forecast-data');
     if (!response.ok) throw new Error('Forecast API HTTP ' + response.status);
     const data = await response.json();
     if (!Array.isArray(data.daily) || !data.daily.length) {
@@ -1029,7 +1029,7 @@ fetch(WASTEFLOW_RECOMMENDATIONS_API)
   if (!box) return;
 
   try {
-    const response = await fetch('/jupyterlab/default/proxy/8000/bins');
+    const response = await fetch('/jupyterlab/default/https://wasteflow-4o45.onrender.com/bins');
     if (!response.ok) throw new Error('API HTTP ' + response.status);
     const payload = await response.json();
     if (!Array.isArray(payload.bins)) throw new Error('Bins array missing');
@@ -1076,7 +1076,7 @@ fetch(WASTEFLOW_RECOMMENDATIONS_API)
 
     try {
       const response = await fetch(
-        '/jupyterlab/default/proxy/8000/scenario?uplift=' +
+        '/jupyterlab/default/https://wasteflow-4o45.onrender.com/scenario?uplift=' +
         encodeURIComponent(uplift) + '&seg=' + encodeURIComponent(seg)
       );
       if (!response.ok) throw new Error('API HTTP ' + response.status);
